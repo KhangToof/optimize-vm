@@ -69,6 +69,7 @@ Máy yếu:
     ExecStart=/lib/systemd/systemd-networkd-wait-online –timeout=1
 #### Lưu lại
 
+
 ### 3. **Cấp full ổ đĩa đã khai báo cho Ubuntu**:
 #### _Ở cả 2 máy ubuntu, ta tiến hành chạy câu lệnh sau (thực hiện ở root)._
     lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu—lv
@@ -82,7 +83,10 @@ Theo như mình tìm hiểu thì pig job khi chạy sẽ thường kết nối �
 2024-04-06 19:59:13,112 [main] INFO  org.apache.hadoop.ipc.Client - Retrying connect to server: 0.0.0.0/0.0.0.0:10020. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
 …
 ```
-Để khắc phục thì cơ bản ta chỉ cần chạy thêm historyserver trước khi chạy pig:
-    mr-jobhistory-daemon.sh start historyserver
 
-Mình mong là những gì mình tổng hợp trên phần nào giúp việc tối ưu cho công việc học tập  BigDataAnalysis được thuận lợi hơn 🐻🐻
+Để khắc phục thì cơ bản ta chỉ cần chạy thêm historyserver trước khi chạy pig:
+```
+mr-jobhistory-daemon.sh start historyserver
+```
+
+Mình mong là những gì mình tổng hợp trên phần nào giúp việc tối ưu cho công việc học tập BigDataAnalysis được thuận lợi hơn 🐻🐻
